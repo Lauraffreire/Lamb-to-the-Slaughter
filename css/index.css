@@ -1,4 +1,3 @@
-/* Reset básico */
 html, body {
     margin: 0;
     padding: 0;
@@ -8,14 +7,13 @@ html, body {
     font-family: "Montserrat", sans-serif;
 }
 
-/* Container dos canvases */
 #canvas-container {
-    position: fixed; /* ocupa toda a tela */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* atrás da page */
+    z-index: 0;
 }
 
 #la-canvas,
@@ -25,17 +23,14 @@ html, body {
     height: 100%;
 }
 
-
-
-/* Faz a .page ocupar a janela inteira com padding */
 #la-canvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* por baixo da .page */
-    pointer-events: none; /* deixa a interface funcionar */
+    z-index: 1;
+    pointer-events: none;
 }
 
 #carne-canvas {
@@ -48,31 +43,25 @@ html, body {
 
 }
 
-
-
 .page {
     position: relative;
-    z-index: 1; /* acima do canvas */
+    z-index: 1;
     width: 100vw;
     height: 100vh;
     padding: 50px;
     box-sizing: border-box;
 }
 
-
-
-/* Container dos nomes no topo */
 .nomes {
     position: absolute;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between; /* distribui os nomes */
-    padding: 0 50px; /* mantém alinhamento com o padding da page */
+    justify-content: space-between;
+    padding: 0 50px;
 
 }
 
-/* Opcional: remove margens dos <p> */
 .nomes p {
     margin: 0;
     font-family: "Montserrat", sans-serif;
@@ -83,9 +72,9 @@ html, body {
 
 h1 {
     position: absolute;
-    right: 50px;       /* mesma distância da direita que o text-center */
-    bottom: 120px;     /* ajusta a distância do fundo para ficar acima do text-center */
-    text-align: right; /* alinha o texto à direita */
+    right: 50px;
+    bottom: 120px;
+    text-align: right;
     line-height: 1;
     margin: 0;
     color: #3C140B;
@@ -105,10 +94,10 @@ h1 {
 }
 
 .text-center {
-    position: absolute;  /* posiciona em relação à .page */
-    bottom: 50px;        /* distância do fundo */
-    right: 50px;         /* distância da direita */
-    text-align: right;   /* alinha o texto à direita */
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    text-align: right;
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
@@ -119,16 +108,16 @@ h1 {
 
 
 .btn-row {
-    position: absolute;   /* permite posicionar dentro da .page */
-    bottom: 50px;         /* distância do fundo (igual ao padding da .page) */
+    position: absolute;
+    bottom: 50px;
 }
 
 .btn{
     font-family: "Montserrat Black", sans-serif;
     font-size: 23px;
     color: #3C140B;
-    display: inline-block;  /* permite transform */
-    transition: transform 0.3s ease; /* animação suave */
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 .btn:hover{

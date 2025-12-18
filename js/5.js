@@ -7,10 +7,10 @@ document.querySelectorAll("input[name='q5']").forEach(opt => {
 
 
 const sonsQ5 = {
-    6: new Audio("som/pensamento.mp3"),     // A
-    10: new Audio("som/cortar.mp3"),    // B
-    0: new Audio("som/dialogo.mp3"),   // C
-    3: new Audio("som/relogio.mp3")      // D
+    6: new Audio("som/pensamento.mp3"),
+    10: new Audio("som/cortar.mp3"),
+    0: new Audio("som/dialogo.mp3"),
+    3: new Audio("som/relogio.mp3")
 };
 
 sonsQ5[3].loop = true;
@@ -20,16 +20,12 @@ Object.values(sonsQ5).forEach(som => {
     som.volume = 0.5;
 });
 
-/* ======================= LIMITE DE ECRÃ ======================== */
-
 function clampPosition(left, top, sizePx = 150) {
     const margin = (sizePx / window.innerWidth) * 100;
     const clampedLeft = Math.max(margin, Math.min(100 - margin, left));
     const clampedTop  = Math.max(margin, Math.min(100 - margin, top));
     return { left: clampedLeft, top: clampedTop };
 }
-
-/* ======================= GESTÃO DO FUNDO ======================== */
 
 function handleBackground(e) {
     const value = e.target.value;
@@ -43,17 +39,15 @@ function handleBackground(e) {
         document.body.appendChild(bg);
     }
 
-    if (value == 6) createThoughtBubbles(bg); // A
-    if (value == 10) createBlood(bg);         // B
-    if (value == 0) createDialogBalloons(bg); // C
-    if (value == 3) createClock(bg);          // D
+    if (value == 6) createThoughtBubbles(bg);
+    if (value == 10) createBlood(bg);
+    if (value == 0) createDialogBalloons(bg);
+    if (value == 3) createClock(bg);
 }
 
 function clearBackground() {
     document.querySelectorAll(".background-effects").forEach(el => el.remove());
 }
-
-/* ========================== SANGUE ============================= */
 
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -140,7 +134,6 @@ function createBlood(bg) {
     for (let i = 0; i < clusters; i++) createBloodCluster(bg, maxClusterSize);
 }
 
-/* ====================== BALÕES PENSAMENTO ====================== */
 
 function createThoughtBubbles(bg) {
     const count = 12;
@@ -180,7 +173,6 @@ function createThoughtBubbles(bg) {
     }
 }
 
-/* ====================== BALÕES DIÁLOGO ========================= */
 
 function createDialogBalloons(bg) {
     const count = 12;
@@ -220,7 +212,6 @@ function createDialogBalloons(bg) {
     }
 }
 
-/* =========================== RELÓGIOS ========================== */
 
 function createClock(bg) {
     createClocks(bg);

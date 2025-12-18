@@ -42,7 +42,7 @@ body {
     50% { opacity: 0; }
 }
 
-/* DIREITA — ECG */
+/*gráfico à direita*/
 .ecg-wrapper {
     width: 50%;
 

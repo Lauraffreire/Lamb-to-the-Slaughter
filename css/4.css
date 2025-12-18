@@ -1,5 +1,5 @@
 * {
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -196,7 +196,6 @@ body {
     transform: translateY(8px) translateX(5px);
 }
 
-/*expessura*/
 .frame.f1, .titulo {
     border-width: 5px;
 }
@@ -265,7 +264,6 @@ body {
     opacity: 0.5;
 }
 
-/* video */
 #video-bg {
     position: fixed;
     top: 0;

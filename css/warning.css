@@ -9,7 +9,6 @@
     text-align: center;
 }
 
-/* BACKGROUND GARANTIDO */
 .screen-warning::before {
     content: "";
     position: absolute;

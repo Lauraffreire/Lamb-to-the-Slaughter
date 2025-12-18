@@ -1,16 +1,8 @@
-/* =========================
-   GUARDAR ESTILO ORIGINAL
-========================= */
-
 const originalStyles = {
     bodyBg: getComputedStyle(document.body).backgroundColor,
     bodyColor: getComputedStyle(document.body).color,
     bodyFont: getComputedStyle(document.body).fontFamily
 };
-
-/* =========================
-   OPÇÕES BASE
-========================= */
 
 const options = document.querySelectorAll(".option-label");
 const optionA = document.querySelector('input[name="q7"][value="2"]');
@@ -22,15 +14,10 @@ const title = document.querySelector(".title-center");
 const question = document.querySelector(".question-text");
 const button = document.querySelector(".btn");
 
-/* =========================
-   SOM — ROLETA (IMPROVISO)
-========================= */
-
-const roletaSound = new Audio("som/roleta.mp3");
+const roletaSound = new Audio("../som/roleta.mp3");
 roletaSound.loop = true;
 roletaSound.volume = 0.6;
 
-/* fade out suave */
 function fadeOutAudio(audio, duration = 300) {
     const startVolume = audio.volume;
     const steps = 20;
@@ -50,37 +37,33 @@ function fadeOutAudio(audio, duration = 300) {
     }, stepTime);
 }
 
-/* =========================
-   OPÇÃO A — FUGA (MOVIMENTO)
-========================= */
-
+/*opção a*/
 const offsets = new Map();
 options.forEach(opt => offsets.set(opt, 0));
 
 optionA.parentElement.addEventListener("click", () => {
     options.forEach(opt => {
-        const distance = Math.floor(Math.random() * 81) + 70; // 70–150
+        const containerWidth = document.querySelector('.card').offsetWidth;
+        const distance = Math.floor(Math.random() * 81) + 70;
         const direction = Math.random() < 0.5 ? -1 : 1;
 
         let proposedOffset = offsets.get(opt) + distance * direction;
 
         const maxLeft = 0;
-        const maxRight = 400;
+        let maxRight = (containerWidth/2)-150;
+
+        if (maxRight < 0) maxRight = 0;
 
         if (proposedOffset < maxLeft) proposedOffset = maxLeft;
         if (proposedOffset > maxRight) proposedOffset = maxRight;
 
         offsets.set(opt, proposedOffset);
-
         opt.style.transition = "transform 0.25s ease";
         opt.style.transform = `translateX(${proposedOffset}px)`;
     });
 });
 
-/* =========================
-   OPÇÃO D — DESAPARECER
-========================= */
-
+/*opção d*/
 let currentOpacity = 1;
 
 optionD.parentElement.addEventListener("click", () => {
@@ -92,11 +75,7 @@ optionD.parentElement.addEventListener("click", () => {
     button.style.opacity = currentOpacity;
 });
 
-/* =========================
-   OPÇÃO B — IMPROVISO
-========================= */
-
-/* 🎨 TEMAS */
+/*opção b*/
 const colorThemes = [
     { bodyBg: "#222020", bodyColor: "#8d8664", hover: "#4a4527" },
     { bodyBg: "#1b232f", bodyColor: "#b2c3dd", hover: "#4a6285" },
@@ -109,7 +88,7 @@ const colorThemes = [
     { bodyBg: "#0d1117", bodyColor: "#cad0da", hover: "#93a8c6" }
 ];
 
-/* 🅰️ FONTES */
+/*fontes*/
 const fonts = [
     "Cascadia Code",
     "Algerian",
@@ -123,7 +102,7 @@ const fonts = [
     "YouMurderer BB"
 ];
 
-/* aplicar tema */
+/*tema*/
 function applyTheme(theme) {
     document.body.style.backgroundColor = theme.bodyBg;
     document.body.style.color = theme.bodyColor;
@@ -140,16 +119,13 @@ function applyTheme(theme) {
     document.head.appendChild(style);
 }
 
-/* aplicar fonte */
+/*fonte*/
 function applyFont(font) {
     document.body.style.fontFamily = font;
     title.style.fontFamily = font;
 }
 
-/* =========================
-   FLICKER + SOM
-========================= */
-
+/*flicker e som*/
 let _flickerInterval = null;
 let _flickerTimeout = null;
 
@@ -184,7 +160,7 @@ function flicker(values, callback, mode) {
     }, duration);
 }
 
-/* CLICK NA OPÇÃO B */
+/*opção b*/
 optionB.addEventListener("click", () => {
     const doColors = Math.random() < 0.5;
 
@@ -199,10 +175,7 @@ optionB.addEventListener("click", () => {
     }
 });
 
-/* =========================
-   OPÇÃO C — RESET TOTAL
-========================= */
-
+/*opção c*/
 optionC.parentElement.addEventListener("click", () => {
 
     fadeOutAudio(roletaSound, 200);

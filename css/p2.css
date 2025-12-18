@@ -6,23 +6,10 @@
 
 body {
     overflow: hidden;
-    background-color: #1b232f;
+    background-color: #0b121c;
     color: #1b232f;
     padding: 20px;
 }
-
-/*
-#blurCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index:10;
-    backdrop-filter: blur(15px);
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-}
-*/
 
 #blurCanvas {
     position: fixed;
@@ -34,12 +21,10 @@ body {
     pointer-events: none;
 
     backdrop-filter: blur(15px);
-    /* A máscara é criada com JS */
     -webkit-mask-image: radial-gradient(circle 80px at var(--mx) var(--my), transparent 0%, black 100%);
     mask-image: radial-gradient(circle 120px at var(--mx) var(--my), transparent 0%, black 100%);
 }
 
-/* Layout principal */
 .main-wrapper {
     min-height: 100vh;
     display: flex;
@@ -47,7 +32,6 @@ body {
     justify-content: center;
 }
 
-/* Caixa da pergunta */
 .card {
     width: 100%;
     max-width: 900px;
@@ -55,7 +39,6 @@ body {
     justify-content: center;
 }
 
-/* Títulos */
 .title-center {
     color: #4a6285;
     text-align: center;
@@ -63,7 +46,6 @@ body {
     font-size: 30px;
 }
 
-/* Pergunta */
 .question-text {
     color: #4a6285;
     font-size: 18px;
@@ -71,7 +53,6 @@ body {
     text-align: center;
 }
 
-/* Lista de opções */
 .options {
     display: flex;
     flex-direction: column;
@@ -79,9 +60,7 @@ body {
     gap: 12px;
 }
 
-/* Cada opção */
 .option-label {
-    background-color: #1b232f;
     color: #b2c3dd;
     display: flex;
     align-items: center;
@@ -91,9 +70,9 @@ body {
     padding: 10px 40px;
     width: 600px;
     text-align: center;
+    border-radius: 10px;
 }
 
-/* Efeito ao passar o rato por cima */
 .option-label:hover {
     opacity: 0.5;
 }
@@ -108,10 +87,9 @@ body {
 }
 
 .option-label input[type="radio"] {
-    display: none; /* ou visibility: hidden; */
+    display: none;
 }
 
-/* Botão Próxima */
 .button-row {
     margin-top: 28px;
     display: flex;

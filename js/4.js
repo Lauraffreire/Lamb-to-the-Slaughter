@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!video1 || !video2 || !btn) return;
 
-    /* ======================= SONS ======================= */
-
     const somInicio = new Audio("som/porta.mp3");
     somInicio.volume = 0.6;
 
@@ -16,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let jaIniciou = false;
     let fallbackAtivo = false;
-
-    /* ======================= RESET ======================= */
 
     function resetarTudo() {
         jaIniciou = false;
@@ -36,8 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         video1.style.display = "block";
         video2.style.display = "none";
     }
-
-    /* ======================= AUTOPLAY + FALLBACK ======================= */
 
     function iniciarPagina() {
         if (jaIniciou) return;
@@ -71,8 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
         video1.pause();
     });
 
-    /* ======================= BOTÃO PRÓXIMA ======================= */
-
     btn.addEventListener("click", () => {
 
         const selecionada = document.querySelector('input[name="q4"]:checked');
@@ -81,22 +73,17 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        /* parar abertura */
         video1.pause();
         somInicio.pause();
 
-        /* trocar vídeos */
         video1.style.display = "none";
         video2.style.display = "block";
 
         video2.currentTime = 0;
         somFecho.currentTime = 0;
 
-        /* iniciar fecho (no mesmo clique) */
         video2.play().catch(() => {});
         somFecho.play().catch(() => {});
-
-        /* quando acabar → avançar */
         video2.onended = () => {
             if (typeof nextQuestion === "function") {
                 nextQuestion("q4", "pergunta5.html");

@@ -5,7 +5,6 @@
     function applyMute() {
         const mute = mq.matches;
 
-        // <audio> e <video> no DOM
         document.querySelectorAll("audio, video").forEach(el => {
             el.muted = mute;
         });
@@ -20,7 +19,6 @@
         const a = new NativeAudio(...args);
         audios.add(a);
 
-        // nasce já mutado em mobile
         a.muted = mq.matches;
         return a;
     };

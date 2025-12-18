@@ -1,8 +1,6 @@
 const esq = document.getElementById("cortina-fechada-esq");
 const dir = document.getElementById("cortina-fechada-dir");
 
-/* ======================= SOM ======================= */
-
 const somCortinas = new Audio("som/aplausos.mp3");
 somCortinas.loop = true;
 somCortinas.volume = 0.4;
@@ -10,11 +8,8 @@ somCortinas.volume = 0.4;
 let ratoNasLaterais = false;
 let fadeInterval = null;
 let timeoutStop = null;
-
-// estado inicial: cortinas abertas → som ativo
 somCortinas.play();
 
-/* ======================= MOVIMENTO ======================= */
 
 document.addEventListener("mousemove", (e) => {
     const x = e.clientX;
@@ -27,13 +22,11 @@ document.addEventListener("mousemove", (e) => {
     ratoNasLaterais = agoraNasLaterais;
 
     if (ratoNasLaterais) {
-        // 👉 FECHAR CORTINAS
         esq.classList.add("fechar");
         dir.classList.add("fechar");
 
-        startFadeOut(800); // duração igual à animação
+        startFadeOut(800);
     } else {
-        // 👉 ABRIR CORTINAS
         esq.classList.remove("fechar");
         dir.classList.remove("fechar");
 
@@ -42,8 +35,6 @@ document.addEventListener("mousemove", (e) => {
         somCortinas.play();
     }
 });
-
-/* ======================= FADE OUT ======================= */
 
 function startFadeOut(duration) {
     cancelFadeOut();

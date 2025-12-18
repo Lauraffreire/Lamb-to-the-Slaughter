@@ -4,10 +4,7 @@ const bgCtx = bgCanvas.getContext("2d");
 const bloodCanvas = document.getElementById("bloodCanvas");
 const ctx = bloodCanvas.getContext("2d");
 
-/* =========================
-   CANVAS RESIZE
-========================= */
-
+/*canvas*/
 function resizeCanvas() {
     bgCanvas.width = bloodCanvas.width = window.innerWidth;
     bgCanvas.height = bloodCanvas.height = window.innerHeight;
@@ -19,10 +16,7 @@ function resizeCanvas() {
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
-/* =========================
-   FUNDO
-========================= */
-
+//fundo
 function drawBackground() {
     const w = bgCanvas.width;
     const h = bgCanvas.height;
@@ -35,10 +29,7 @@ function drawBackground() {
     bgCtx.fillRect(0, 0, w, h);
 }
 
-/* =========================
-   SANGUE
-========================= */
-
+/*sangue*/
 function drawBloodSpot(ctx, x, y, maxRadius = 80) {
     const radius = 3 + Math.random() * maxRadius;
     ctx.fillStyle = "#6e0f0f";
@@ -88,16 +79,11 @@ function drawBloodTexture() {
     }
 }
 
-/* =========================
-   BORRACHA
-========================= */
+/*borracha*/
 
 const eraserSize = 60;
 
-/* =========================
-   ÁUDIO REACTIVO AO MOUSE
-========================= */
-
+/*aúdio*/
 const cleaningSound = new Audio("som/cleaning.mp4");
 cleaningSound.loop = true;
 cleaningSound.volume = 0;
@@ -127,10 +113,7 @@ function fadeOutAudio(audio, duration = 300) {
     }, duration / steps);
 }
 
-/* =========================
-   MOUSE MOVE
-========================= */
-
+/*mouse*/
 function handleMouseMove(e) {
     const now = performance.now();
 
@@ -183,10 +166,6 @@ function handleMouseMove(e) {
 }
 
 window.addEventListener("mousemove", handleMouseMove);
-
-/* =========================
-   PAGE RESTORE
-========================= */
 
 window.addEventListener("pageshow", () => {
     cleaningSound.pause();

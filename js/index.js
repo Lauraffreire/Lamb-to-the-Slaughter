@@ -1,7 +1,3 @@
-/* =========================
-   CANVAS SETUP
-========================= */
-
 const container = document.getElementById("canvas-container");
 
 const carneCanvas = document.getElementById("carne-canvas");
@@ -13,10 +9,7 @@ const laCtx = laCanvas.getContext("2d");
 // Detectar mobile
 const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-/* =========================
-   SONS
-========================= */
-
+/*sons*/
 const scratchSounds = [];
 for (let i = 1; i <= 7; i++) {
     const audio = new Audio(`som/${i}.mp4`);
@@ -77,20 +70,14 @@ function playScratchSound(speed) {
     sound.play().catch(() => {});
 }
 
-/* =========================
-   IMAGENS
-========================= */
-
+/*imgs*/
 const carneImg = new Image();
 carneImg.src = 'homepage/carne.png';
 
 const laImg = new Image();
 laImg.src = 'homepage/la_image.png';
 
-/* =========================
-   RESIZE
-========================= */
-
+/*resize*/
 function resize() {
     carneCanvas.width = laCanvas.width = container.clientWidth;
     carneCanvas.height = laCanvas.height = container.clientHeight;
@@ -98,10 +85,7 @@ function resize() {
 window.addEventListener("resize", resize);
 resize();
 
-/* =========================
-   RIBBONS
-========================= */
-
+/*ribbons*/
 const ribbons = [];
 const ribbonCount = 10;
 const pointCount = 12;
@@ -124,10 +108,7 @@ for (let i = 0; i < ribbonCount; i++) {
     });
 }
 
-/* =========================
-   MOUSE
-========================= */
-
+/*mouse*/
 const mouse = {
     x: laCanvas.width / 2,
     y: laCanvas.height / 2
@@ -145,10 +126,7 @@ document.addEventListener("mousemove", e => {
     mouse.y = e.clientY - rect.top;
 });
 
-/* =========================
-   UPDATE
-========================= */
-
+/*update*/
 function updateRibbons() {
 
     // movimento automático no mobile
@@ -208,10 +186,7 @@ function updateRibbons() {
     lastMouse = { ...mouse };
 }
 
-/* =========================
-   DRAW
-========================= */
-
+/*draw*/
 function drawCoverImage(ctx, img, canvas) {
     const imgRatio = img.width / img.height;
     const canvasRatio = canvas.width / canvas.height;
@@ -266,20 +241,14 @@ function draw() {
     laCtx.restore();
 }
 
-/* =========================
-   LOOP
-========================= */
-
+/*loop*/
 function animate() {
     updateRibbons();
     draw();
     requestAnimationFrame(animate);
 }
 
-/* =========================
-   START
-========================= */
-
+/*start*/
 let imagesLoaded = 0;
 [carneImg, laImg].forEach(img => {
     img.onload = () => {

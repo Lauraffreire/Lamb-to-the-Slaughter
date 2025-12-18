@@ -1,5 +1,4 @@
-/* ================= TERMINAL ================= */
-
+/*terminal*/
 const terminal = document.getElementById("terminal");
 
 const textLines = `
@@ -58,8 +57,7 @@ function typeText() {
 // inicia a escrita
 typeText();
 
-/* ================= ECG ================= */
-
+/*grágico*/
 const canvas = document.getElementById("ecg");
 const ctx = canvas.getContext("2d");
 
@@ -130,7 +128,7 @@ function drawGrid() {
     }
 }
 
-// animação ECG
+// animação
 function animate(time) {
     const interval = 1000 / fps;
     if (time - lastFrame < interval) {
@@ -166,8 +164,7 @@ function animate(time) {
 
 requestAnimationFrame(animate);
 
-/* ================= TECLADO ================= */
-
+/*script*/
 document.addEventListener("keydown", function (e) {
     const key = e.key.toLowerCase();
 
@@ -190,7 +187,7 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
-/* ================= RESTART AUDIO AO VOLTAR ================= */
+/*restart do aúdio*/
 
 window.addEventListener("pageshow", () => {
     // heartbeat

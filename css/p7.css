@@ -1,11 +1,9 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fundo e fonte */
 body {
     background-color: #f3f5f8;
     color: #0d1117;
@@ -16,34 +14,29 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-/* Wrapper geral */
 .main-wrapper {
     display: flex;
     align-items: center;
-    gap: 30px; /* espaço entre a pergunta vertical e o card */
+    gap: 30px;
 }
 
-/* Pergunta 7 / 10 na vertical */
 .title-center {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-size: 55px;
-    font-weight: 900; /* mantém o peso visual */
+    font-weight: 900;
 }
 
-/* Cartão da pergunta */
 .card {
     max-width: 580px;
 }
 
-/* Texto da pergunta */
 .question-text {
     font-size: 45px;
     font-weight: bold ;
     margin-bottom: 15px;
 }
 
-/* Opções */
 .options {
     display: flex;
     flex-direction: column;
@@ -60,15 +53,10 @@ body {
     color: #405270;
 }
 
-.option-label input {
-
-}
-
 .option-label input[type="radio"] {
-    display: none; /* ou visibility: hidden; */
+    display: none;
 }
 
-/* Botão */
 .button-row {
     margin-top: 15px;
 }
