@@ -1,0 +1,132 @@
+@import url('https://www.1001fonts.com');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "YouMurderer BB", sans-serif;
+    color: #6e0f0f;
+}
+
+body {
+    overflow: hidden;
+    padding: 20px;
+
+}
+
+/*fundo com a gradiente*/
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/*manchaas de sangue*/
+#bloodCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: none;
+}
+
+
+/* layout do quiz */
+.main-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*formulário */
+.card {
+    width: 100%;
+    max-width: 700px;
+    padding: 0 45px;
+    justify-content: center;
+    font-size: 50px;
+    z-index: 10;
+}
+
+.title-center {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 127px;
+}
+
+.question-text {
+    margin-bottom: 40px;
+}
+
+.cima{
+    font-size: 78px;
+}
+
+.baixo{
+    font-size: 84px;
+}
+
+/*opções */
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.option-label {
+    transition: 0.2s;
+}
+
+.oa{
+    font-size: 60px;
+}
+
+.ob{
+    font-size: 47px;
+}
+
+.oc{
+    font-size: 58px;
+}
+
+.od{
+    font-size: 73px;
+}
+
+.option-label:hover {
+    opacity: 0.3;
+}
+
+.option-label input[type="radio"]:checked + span {
+    color: #9a1b03;
+}
+
+.option-label input[type="radio"] {
+    display: none; /* ou visibility: hidden; */
+}
+
+.button-row {
+    margin-top: 28px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    position: fixed;          /* fixa na tela */
+    right: 400px;              /* distância da direita */
+    top: 90%;                 /* meio da tela */
+    transform: translateY(-50%) scaleX(1.7); /* centra verticalmente */
+    background-color: transparent;
+    border: none;
+    font-size: 120px;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 20; /* para ficar acima dos canvas */
+}
+
+.btn:hover {
+    opacity: 0.3;
+}
