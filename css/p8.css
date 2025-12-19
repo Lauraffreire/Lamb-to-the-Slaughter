@@ -1,6 +1,6 @@
-@font-face{
+@font-face {
     font-family: 'YouMurderer BB';
-    src: url(.../fonts/youmurderer-bb/youmurdererbb_reg);
+    src: url('../fonts/youmurderer-bb/youmurdererbb_reg.ttf') format('truetype');
 }
 
 *{
