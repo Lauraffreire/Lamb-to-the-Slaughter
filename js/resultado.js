@@ -65,16 +65,12 @@ function mostrarResultado() {
     videoEl.currentTime = 0;
     videoEl.play().catch(() => {
     });
-  let audio;
-
-videoEl.addEventListener("play", () => {
-    if (!audio) {
-        audio = new Audio(audioSrc);
-        audio.volume = 0.7;
-        audio.play().catch(() => {});
-    }
-});
-
+    const audio = new Audio(audioSrc);
+    audio.volume = 0.7;
+    audio.loop = false;
+    audio.currentTime = 0;
+    audio.play().catch(() => {
+    });
     videoEl.addEventListener("ended", () => videoEl.pause());
     audio.addEventListener("ended", () => audio.pause());
 }

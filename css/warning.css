@@ -44,8 +44,6 @@
     max-width: 40ch;
 }
 
-
-
 @media (max-width: 850px) {
     body > *:not(.screen-warning) {
         display: none !important;

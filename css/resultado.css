@@ -6,7 +6,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
 }
 
@@ -14,6 +13,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    font-family: "Montserrat", sans-serif;
     background: #474c5a;
     position: relative;
 }
@@ -80,29 +80,20 @@ body {
 }
 
 .btn {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-
+    position: absolute;
+    bottom: -143px;
+    left: 78%;
+    transform: translateX(-50%);
     width: 220px;
-    padding: 14px;
-
+    z-index: 9999;
     background: #d12221;
-    color: #fff;
     border: none;
+    padding: 12px;
     border-radius: 30px;
-
+    color: #fff;
     font-size: 14px;
     cursor: pointer;
-
-    z-index: 99999; /* acima de tudo */
 }
-
-
-.btn:hover {
-    background: #701613;
-}
-
 
 .btn:hover {
     background: #701613;
