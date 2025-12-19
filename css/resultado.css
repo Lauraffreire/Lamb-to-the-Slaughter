@@ -78,21 +78,23 @@ body {
     margin-bottom: 8px;
     color: #ddd;
 }
-
 .btn {
-    position: absolute;
-    bottom: -143px;
-    left: 78%;
-    transform: translateX(-50%);
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+
     width: 220px;
-    z-index: 9999;
+    padding: 14px;
+
     background: #d12221;
-    border: none;
-    padding: 12px;
-    border-radius: 30px;
     color: #fff;
+    border: none;
+    border-radius: 30px;
+
     font-size: 14px;
     cursor: pointer;
+
+    z-index: 99999; /* acima de tudo */
 }
 
 .btn:hover {
