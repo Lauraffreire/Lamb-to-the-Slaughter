@@ -1,4 +1,7 @@
-@import url('https://fonts.google.com/share?selection.family=Caveat:wght@400..700');
+@font-face{
+    font-family: 'Caveat';
+    src: url(.../fonts/Caveat/Caveat-VariableFont_wght);
+}
 
 * {
     margin: 0;
