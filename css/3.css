@@ -3,6 +3,11 @@
     src: url(.../fonts/Caveat/Caveat-VariableFont_wght);
 }
 
+@font-face{
+    font-family: 'Montserrat';
+    src: url(.../fonts/Montserrat/Montserrat-VariableFont_wght);
+}
+
 * {
     margin: 0;
     padding: 0;
