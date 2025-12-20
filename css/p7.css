@@ -58,10 +58,6 @@ body {
     color: #405270;
 }
 
-.option-label input {
-
-}
-
 .option-label input[type="radio"] {
     display: none;
 }

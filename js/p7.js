@@ -1,3 +1,30 @@
+function loadFont(name, url) {
+    const font = new FontFace(name, `url(${url})`);
+    return font.load().then(loadedFont => {
+        document.fonts.add(loadedFont);
+    });
+}
+
+const localFonts = [
+    { name: "Cascadia Code", url: "../fonts/Cascadia_Code/CascadiaCode-VariableFont_wght.ttf" },
+    { name: "Algerian", url: "../fonts/Algerian_Regular/Algerian Regular.ttf" },
+    { name: "Bauhaus 93", url: "../fonts/bauhaus-93/BAUHS93.ttf" },
+    { name: "Bradley Hand ITC", url: "../fonts/Bradley-Hand-Font/BRADHI.ttf" },
+    { name: "Broadway", url: "../fonts/broadway-bt/8094231822.ttf"},
+    { name: "Cooper Black", url: "../fonts/cooper-black/COOPBL.ttf"},
+    { name: "Copperplate Gothic Bold", url: "../fonts/Copperplate_Gothic_Bold/copperplategothic_bold.ttf"},
+    { name: "CourierPrime", url: "../fonts/Courier_Prime/CourierPrime-Regular.ttf"},
+    { name: "Caveat", url: "../fonts/Caveat/Caveat-VariableFont_wght.ttf"},
+    { name: "YouMurderer BB", url: "../fonts/youmurderer-bb/youmurdererbb_reg.ttf"}
+];
+
+Promise.all(
+    localFonts.map(f => loadFont(f.name, f.url))
+).then(() => {
+    console.log("Todas as fontes carregadas");
+});
+
+
 const originalStyles = {
     bodyBg: getComputedStyle(document.body).backgroundColor,
     bodyColor: getComputedStyle(document.body).color,
@@ -97,7 +124,7 @@ const fonts = [
     "Broadway",
     "Cooper Black",
     "Copperplate Gothic Bold",
-    "Courier New",
+    "CourierPrime",
     "Caveat",
     "YouMurderer BB"
 ];
