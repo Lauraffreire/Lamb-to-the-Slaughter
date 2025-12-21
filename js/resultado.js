@@ -24,7 +24,7 @@ function mostrarResultado() {
             "<p><strong>Chance de cometer crime passional:</strong> 0.01% - e seria por acidente.</p> " +
             "<p><strong>Comentário da Mary:</strong> \"Tão puro, tão ingénuo... quase dá pena.\"</p>";
     } else if (percentage <= 35) {
-        tisposptle = "Cidadão Funcional";
+        title = "Cidadão Funcional";
         videoSrc = "img/35.mp4";
         audioSrc = "som/35.mp3";
         html = "<p><strong>Diagnóstico:</strong> Mentalmente estável, surpreendentemente até.</p> " +
