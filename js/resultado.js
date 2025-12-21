@@ -21,15 +21,15 @@ function mostrarResultado() {
         audioSrc = "som/15.mp3";
         html = "<p><strong>Diagnóstico:</strong> És basicamente o oposto da Mary. Tens boa fé, boa energia e provavelmente pedes desculpa quando alguém te pisa.</p> " +
             "<p><strong>O teu estilo:</strong> Confias no diálogo, acreditas no melhor das pessoas e resolves tudo com chá, mantas e conversas profundas.</p> " +
-            "<p><strong>Chance de cometer crime passional:</strong> 0.01% - e seria por acidente.</p> " +
+            "<p><strong>Chance de cometer crime passional:</strong> 0.01%, e seria por acidente.</p> " +
             "<p><strong>Comentário da Mary:</strong> \"Tão puro, tão ingénuo... quase dá pena.\"</p>";
     } else if (percentage <= 35) {
         title = "Cidadão Funcional";
         videoSrc = "img/35.mp4";
         audioSrc = "som/35.mp3";
         html = "<p><strong>Diagnóstico:</strong> Mentalmente estável, surpreendentemente até.</p> " +
-            "<p><strong>O teu estilo:</strong> Conversas, conforto e gelado a tua combinação favorita.</p> " +
-            "<p><strong>Chance de cometer crime passional:</strong> 5% só em circunstâncias muito extremas.</p> " +
+            "<p><strong>O teu estilo:</strong> Conversas, conforto e gelado são a tua combinação favorita.</p> " +
+            "<p><strong>Chance de cometer crime passional:</strong> 5%, só em circunstâncias muito extremas.</p> " +
             "<p><strong>Comentário da Mary:</strong> \"Discreto/a, simples… pelo menos não és chato/a.\"</p>";
     } else if (percentage <= 55) {
         title = "Serenidade Sombria";
