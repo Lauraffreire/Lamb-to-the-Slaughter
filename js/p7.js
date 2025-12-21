@@ -7,7 +7,7 @@ function loadFont(name, url) {
 
 const localFonts = [
     { name: "Cascadia Code", url: "../fonts/Cascadia_Code/CascadiaCode-VariableFont_wght.ttf" },
-    { name: "Algerian", url: "../fonts/Algerian_Regular/Algerian Regular.ttf" },
+    { name: "Algerian", url: "../fonts/Algerian_Regular/Algerian_Regular.ttf" },
     { name: "Bauhaus 93", url: "../fonts/bauhaus-93/BAUHS93.ttf" },
     { name: "Bradley Hand ITC", url: "../fonts/Bradley-Hand-Font/BRADHI.ttf" },
     { name: "Broadway", url: "../fonts/broadway-bt/8094231822.ttf"},
@@ -41,7 +41,7 @@ const title = document.querySelector(".title-center");
 const question = document.querySelector(".question-text");
 const button = document.querySelector(".btn");
 
-const roletaSound = new Audio("../som/roleta.mp3");
+const roletaSound = new Audio("./som/roleta.mp3");
 roletaSound.loop = true;
 roletaSound.volume = 0.6;
 

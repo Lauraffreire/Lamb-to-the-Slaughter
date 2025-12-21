@@ -11,7 +11,7 @@ const imageEyes = Array.from(document.querySelectorAll(".image-eye"));
 const pupilColors = ["#2f2c1b", "#4a6285", "#324561", "#666", "#240c06", "#3d2907", "#615237", "#8d8664"];
 
 const blinkSounds = [
-    new Audio("../som/piscar1.mp4"),
+    new Audio("./som/piscar1.mp4"),
 ];
 
 function collidesWithEyes(x, y) {
